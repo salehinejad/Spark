@@ -9,8 +9,6 @@ sc = SparkContext(conf=conf)
 
 logData = sc.textFile(logFile).cache()
 
-def counter(chri):
-    return 'a' in chri
 
 numAs = logData.filter(lambda s: 'a' in s).count()
 numBs = logData.filter(lambda s: 'b' in s).count()
