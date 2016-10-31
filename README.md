@@ -1,2 +1,2 @@
-# spark
+# Spark
 Material for learning Spark
