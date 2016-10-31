@@ -9,8 +9,10 @@ sc = SparkContext(conf=conf)
 
 logData = sc.textFile(logFile).cache()
 
+def counter(line):
+    return 'a' in line
 
-numAs = logData.filter(lambda s: 'a' in s).count()
+numAs = logData.filter(counter).count()
 numBs = logData.filter(lambda s: 'b' in s).count()
 
 print "Lines with a: %i, lines with b: %i" % (numAs, numBs)
