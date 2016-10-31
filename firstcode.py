@@ -1,3 +1,4 @@
+#counts the number of lines containing ‘a’ and the number containing ‘b’ in a text file
 from pyspark import SparkContext, SparkConf
 
 logFile = "loggy.md"  # Should be some file on your system
