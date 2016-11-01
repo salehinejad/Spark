@@ -1,13 +1,13 @@
 
 from pyspark import SparkContext, SparkConf
-
+import time
 logFile = "loggy.md"  # Should be some file on your system
 conf=SparkConf()
 conf.setMaster("local[4]")
 conf.setAppName("Simple Khan")
 conf.set("spark.executor.memory", "1g")
 sc = SparkContext(conf=conf)
-
+a=time.time()
 logData = sc.textFile(logFile).cache()
 
 def summer(a,b):
